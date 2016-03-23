@@ -1,0 +1,200 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul ,li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.outer{
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+section{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+section:nth-of-type(1){
+    background: url("../images/1.jpg") no-repeat;
+}
+section:nth-of-type(1) .title{
+    position: relative;
+    /*margin: 2rem  auto;*/
+    width: 5rem;
+    height: 0.75rem;
+    line-height: 0.75rem;
+    font-size: 0.6rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    border:solid 3px white;
+    animation:mymove 3s;
+    -webkit-animation:mymove 3s;
+    -webkit-animation-iteration-count : 1;
+    animation-fill-mode:forwards;
+    -webkit-animation-fill-mode:forwards;
+}
+@keyframes mymove{
+    from {left:-150%; top: 0}
+    to {left:50%;top:2rem; margin-left: -2.5rem}
+}
+
+@-webkit-keyframes mymove/*Safari and Chrome*/
+{
+    from {left:-150%;top:0;}
+    to {left:50%;top: 2rem; margin-left: -2.5rem}
+}
+section:nth-of-type(1) .line{
+    margin: 3rem auto 0;
+    width: 90%;
+    height: 0.1rem;
+    border-bottom: solid 1px white;
+    animation: show 3s;
+    -webkit-animation: show 3s;
+}
+@keyframes  show{
+    from{opacity: 0}
+    to{opacity: 1}
+}
+@-webkit-keyframes  show{
+    from{opacity: 0}
+    to{opacity: 1}
+}
+section:nth-of-type(1) .meet{
+    position: relative;
+    font-size: 0.4rem;
+    color: white;
+    line-height: 2rem;
+    text-align: center;
+    animation: rotate 3s;
+}
+@keyframes rotate {
+    form{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes rotate {
+    form{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+section:nth-of-type(1) .date{
+    position: relative;
+    margin: 1rem auto;
+    width: 4.8rem;
+    height: 1rem;
+    line-height: 1rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.35rem;
+    color: greenyellow;
+    background: white;
+    border-radius: 1rem;
+    animation: date 3s;
+    animation-fill-mode:forwards;
+    -webkit-animation-fill-mode:forwards;/*停止动画最后一帧*/
+}
+@keyframes date {
+    0%{
+        bottom: -5rem;
+    }
+    50%{
+        bottom:3rem;
+    }
+    100%{
+        bottom: 0.4rem;
+    }
+}
+@-webkit-keyframes date {
+    0%{
+        bottom: -20rem;
+    }
+    50%{
+        bottom:2rem;
+    }
+    100%{
+        bottom: 0.4rem;
+    }
+}
+.tip{
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0;
+    left: 0;
+    display: block;
+    margin: 0 auto;
+
+    border-bottom: solid 4px white;
+    border-right: solid 4px white;
+    transform: rotate(45deg);
+
+    -webkit-animation: tipMove 1.5s ease-in-out 0s infinite both;
+    animation: tipMove 1.5s ease-in-out 0s infinite both;
+}
+@-webkit-keyframes tipMove {
+    0%, 100% {
+        opacity: 1;
+        bottom: 10px;
+        width: 0.5rem;
+        height: 0.5rem;
+    }
+    50% {
+        opacity: 0;
+        bottom: 20px;
+        width: 0.4rem;
+        height: 0.4rem;
+    }
+}
+
+@keyframes tipMove {
+    0%, 100% {
+        opacity: 1;
+        bottom: 10px;
+        width: 0.5rem;
+        height: 0.5rem;
+    }
+    50% {
+        opacity: 0;
+        bottom: 20px;
+        width: 0.4rem;
+        height: 0.4rem;
+    }
+}
+/*第二页*/
+
+section:nth-of-type(2){
+    background: url("../images/2.jpg") no-repeat;
+}
+section:nth-of-type(3){
+    background:url("../images/3.jpg") no-repeat;
+}
+section:nth-of-type(4){
+    background: linear-gradient(top,#DDF9F8,#fcf0b5,greenyellow);
+    background: -webkit-linear-gradient(top,#DDF9F8,#fcf0b5,greenyellow);
+}
+section:nth-of-type(5){
+    background: url("../images/4.jpg") no-repeat;
+}
+
+
+
+
+
