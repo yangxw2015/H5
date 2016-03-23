@@ -31,7 +31,6 @@ section:nth-of-type(1){
 }
 section:nth-of-type(1) .title{
     position: relative;
-    /*margin: 2rem  auto;*/
     width: 5rem;
     height: 0.75rem;
     line-height: 0.75rem;
@@ -145,7 +144,7 @@ section:nth-of-type(1) .date{
     border-bottom: solid 4px white;
     border-right: solid 4px white;
     transform: rotate(45deg);
-
+    -webkit-transform: rotate(45deg);
     -webkit-animation: tipMove 1.5s ease-in-out 0s infinite both;
     animation: tipMove 1.5s ease-in-out 0s infinite both;
 }

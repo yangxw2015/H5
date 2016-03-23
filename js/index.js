@@ -40,25 +40,67 @@
             var changePos = this["changePos"];
             if (Math.abs(changePos) / winH >= 0.25) {
                 index++;
+                if(index==count){
+                    index=0;
+                }
                 tip.style.display = index >= (count - 1) ? "none" : "block";
             }
             outer.style.top = -index * winH + "px";
 
-            window.setTimeout(function(){
+            window.setTimeout(function () {
                 setTran(false);
-                pageList.forEach(function(cur,i){
-                    cur.className=i===index?"move":null
+                pageList.forEach(function (cur, i) {
+                    cur.className = i === index ? "move" : null
                 })
             })
         }
     });
 
-    function setTran(flag){
-        if(flag){
-            outer.style.webkitTransitionDuration="0.5s";
+    $t.swipeDown(body, {
+        start: function (e) {
+            this["isEnd"] = false;
+            this["changePos"] = 0;
+            this["strTop"] = parseFloat(outer.style.top);
+        },
+        move: function (e) {
+            if (index >= (count - 1)) {
+                this["isEnd"] = true;
+                return;
+            }
+            var changePos = this["endYswipeDown"] - this["strYswipeDown"];
+            this["changePos"] = changePos;
+            outer.style.top = this["strTop"] + changePos + "px";
+        },
+        end: function (e) {
+            if (this["isEnd"]) {
+                return;
+            }
+            setTran(true);
+            var changePos = this["changePos"];
+            if (Math.abs(changePos) / winH >= 0.25) {
+                index--;
+                if(index==0){
+                    index=count;
+                }
+                tip.style.display = index >= (count - 1) ? "none" : "block";
+            }
+            outer.style.top = -index * winH + "px";
+
+            window.setTimeout(function () {
+                setTran(false);
+                pageList.forEach(function (cur, i) {
+                    cur.className = i === index ? "move" : null
+                })
+            })
+        }
+    });
+
+    function setTran(flag) {
+        if (flag) {
+            outer.style.webkitTransitionDuration = "0.5s";
             return;
         }
-        outer.style.webkitTransitionDuration="0.5s";
+        outer.style.webkitTransitionDuration = "0.5s";
     }
 
 
