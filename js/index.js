@@ -38,10 +38,10 @@
             }
             setTran(true);
             var changePos = this["changePos"];
-            /*if (Math.abs(changePos) / winH >= 0.25) {
+            if (Math.abs(changePos) / winH >= 0.25) {
                 index++;
                 tip.style.display = index >= (count - 1) ? "none" : "block";
-            }*/
+            }
             outer.style.top = -index * winH + "px";
 
             window.setTimeout(function(){
