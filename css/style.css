@@ -8,26 +8,35 @@ ul ,li{
 a{
     text-decoration: none;
 }
-html,body{
+html,body,.outer{
     width: 100%;
     height: 100%;
     overflow: hidden;
 }
 .outer{
     position: relative;
+}
+.inner{
+    position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    -webkit-transition: all 0s linear 0s;
+    transition: all 0s linear 0s;
 }
-section{
+.inner section{
+    position: relative;
     width: 100%;
     height: 100%;
-    background-size: cover;
 }
+
+
+
+
 section:nth-of-type(1){
     background: url("../images/1.jpg") no-repeat;
+    background-size: cover;
 }
 section:nth-of-type(1) .title{
     position: relative;
@@ -181,9 +190,11 @@ section:nth-of-type(1) .date{
 
 section:nth-of-type(2){
     background: url("../images/2.jpg") no-repeat;
+    background-size: cover;
 }
 section:nth-of-type(3){
     background:url("../images/3.jpg") no-repeat;
+    background-size: cover;
 }
 section:nth-of-type(4){
     background: linear-gradient(top,#DDF9F8,#fcf0b5,greenyellow);
@@ -191,6 +202,70 @@ section:nth-of-type(4){
 }
 section:nth-of-type(5){
     background: url("../images/4.jpg") no-repeat;
+    background-size: cover;
+}
+
+.scale{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -1.5rem;
+    margin-top: -1.5rem;
+    width: 3rem;
+    height: 3rem;
+    border: dashed 2px white;
+    border-radius: 50%;
+}
+.scaleX{
+    -webkit-animation: audioMoveX 2s linear 0s infinite both;
+    animation: audioMoveX 2s linear 0s infinite both;
+}
+@-webkit-keyframes audioMoveX {
+    100% {
+        -webkit-transform: rotateX(360deg);
+        transform: rotateX(360deg);
+    }
+}
+
+@keyframes audioMoveX {
+    100% {
+        -webkit-transform: rotateX(360deg);
+        transform: rotateX(360deg);
+    }
+}
+.scaleY{
+    -webkit-animation: audioMoveY 2s linear 0s infinite both;
+    animation: audioMoveY 2s linear 0s infinite both;
+}
+@-webkit-keyframes audioMoveY {
+    100% {
+        -webkit-transform: rotateY(360deg);
+        transform: rotateY(360deg);
+    }
+}
+
+@keyframes audioMoveY {
+    100% {
+        -webkit-transform: rotateY(360deg);
+        transform: rotateY(360deg);
+    }
+}
+.scaleZ{
+    -webkit-animation: audioMoveZ 2s linear 0s infinite both;
+    animation: audioMoveZ 2s linear 0s infinite both;
+}
+@-webkit-keyframes audioMoveZ {
+    100% {
+        -webkit-transform: rotateZ(360deg);
+        transform: rotateZ(360deg);
+    }
+}
+
+@keyframes audioMoveZ {
+    100% {
+        -webkit-transform: rotateZ(360deg);
+        transform: rotateZ(360deg);
+    }
 }
 
 
